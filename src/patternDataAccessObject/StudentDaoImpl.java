@@ -12,7 +12,7 @@ public class StudentDaoImpl implements StudentDao {
       Student student1 = new Student("Robert",0);
       Student student2 = new Student("John",1);
       students.add(student1);
-      students.add(student2);		
+      students.add(student2);
    }
    @Override
    public void deleteStudent(Student student) {
@@ -20,20 +20,19 @@ public class StudentDaoImpl implements StudentDao {
       System.out.println("Student: Roll No " + student.getId() + ", deleted from database");
    }
 
-
    @Override
    public List<Student> getAllStudents() {
       return students;
    }
 
    @Override
-   public Student getStudent(int rollNo) {
-      return students.get(rollNo);
+   public Student getStudent(int id) {
+      return students.get(id);
    }
 
    @Override
    public void updateStudent(Student student) {
       students.get(student.getId()).setName(student.getName());
-      System.out.println("Student: Roll No " + student.getId() + ", updated in the database");
+      System.out.println("Student: Id  " + student.getId() + ", updated in the database");
    }
 }
