@@ -18,3 +18,4 @@ public class Dancer {
         return "Я " + name + ", мне " + age + " лет. " ;
     }
 }
+
