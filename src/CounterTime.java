@@ -1,11 +1,16 @@
 public class CounterTime {
-    public static void main(String[] args) {
-        int number = 110;
-        int hours = 0;
-        int minutes = 0;
-        int result = number / 60;
-        if (number % 60 == 0) {
-            System.out.println(result + " hours");
+    public static void countTime(int number) {
+        int hours = number / 60;
+        int minutes = number - (60 * hours);
+        if (minutes % 60 == 0) {
+            System.out.println(hours + " hours.");
+        } else {
+            System.out.println(hours + " hours and " + minutes + " minutes.");
         }
     }
+
+    public static void main(String[] args) {
+        countTime(1000);
+    }
 }
+
