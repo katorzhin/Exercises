@@ -5,7 +5,7 @@ public class HypothesisSyracuse {
         int firstNumber = 777;
         int secondNumber = 788;
         int tmp;
-        for (int i = firstNumber; i <= secondNumber; i++) {
+        for (int i = firstNumber; i < secondNumber; i++) {
             tmp = i;
             while (tmp != 1) {
                 if (tmp % 2 == 0) {
