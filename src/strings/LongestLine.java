@@ -18,14 +18,14 @@ public class LongestLine {
 
     public static void main(String[] args) {
 
-        Scanner sc = new Scanner(System.in); // Объявляем Scanner
+        Scanner sc = new Scanner(System.in);
         System.out.println("enter the length of String array ");
-        int size = sc.nextInt(); // Читаем с клавиатуры размер массива и записываем в size
-        String[] array = new String[size]; // Создаём массив int размером в size
+        int size = sc.nextInt();
+        String[] array = new String[size];
         System.out.println("Insert array elements:");
-        /*Пройдёмся по всему массиву, заполняя его*/
+
         for (int i = 0; i < size; i++) {
-            array[i] = sc.next(); // Заполняем массив элементами, введёнными с клавиатуры
+            array[i] = sc.next();
         }
         System.out.println("longest string: "+getLongestString(array));
         System.out.println(Arrays.toString(array));
