@@ -11,8 +11,8 @@ public class InsertElementIntoArray {
         int[] newArray = new int[array.length + 1];
 
         System.arraycopy(array, 0, newArray, 0, 5);
-        newArray[5]=2;
-        System.arraycopy(array,5,newArray,6,3);
+        newArray[5] = 2;
+        System.arraycopy(array, 5, newArray, 6, 3);
 
 
         System.out.println(Arrays.toString(array));
