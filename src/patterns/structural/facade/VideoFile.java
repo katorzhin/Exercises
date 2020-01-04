@@ -1,4 +1,4 @@
-package patterns.structural;
+package patterns.structural.facade;
 
 public class VideoFile {
     private String name;
