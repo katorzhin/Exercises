@@ -10,18 +10,14 @@ public class NumberOfDividers {
             for (int i = 1; i < minNumber; i++)
                 if (minNumber % i == 0)
                     m++;
-                if (m >= n) {
-                    System.out.print(minNumber + " - " + m);
-                    for (int j = 1; j < minNumber; j++)
-                        if (minNumber % j == 0)
-                            System.out.print(j + " ");
-                    System.out.println();
-
-
-
-                }
-            minNumber++;
+            if (m >= n) {
+                System.out.print(minNumber + " - " + m);
+                for (int j = 1; j < minNumber; j++)
+                    if (minNumber % j == 0)
+                        System.out.print(j + " ");
+                System.out.println();
             }
-
+            minNumber++;
+        }
     }
 }
