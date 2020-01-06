@@ -1,4 +1,4 @@
-package patterns.structural;
+package patterns.structural.facade;
 
 import java.io.File;
 

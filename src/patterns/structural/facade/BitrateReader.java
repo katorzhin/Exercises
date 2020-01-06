@@ -1,4 +1,4 @@
-package patterns.structural;
+package patterns.structural.facade;
 
 public class BitrateReader {
     public static VideoFile read(VideoFile file, Codec codec) {

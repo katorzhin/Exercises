@@ -1,4 +1,4 @@
-package patterns.structural;
+package patterns.structural.facade;
 
 public class CodecFactory {
     public static Codec extract(VideoFile file) {
