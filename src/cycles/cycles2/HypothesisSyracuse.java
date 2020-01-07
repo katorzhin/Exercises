@@ -12,12 +12,10 @@ public class HypothesisSyracuse {
                     tmp = tmp / 2;
                 } else {
                     tmp = (tmp * 3 + 1) / 2;
-
                 }
                 System.out.print(tmp + " ");
             }
             System.out.println();
         }
-
     }
 }

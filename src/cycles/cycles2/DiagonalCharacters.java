@@ -11,7 +11,6 @@ public class DiagonalCharacters {
                 }
             }
             System.out.println();
-
         }
     }
 }
