@@ -1,7 +1,5 @@
 package matrix;
 
-import java.util.Arrays;
-
 public class ColumnWithMaxSumOfElements {
 
     public static int sumOfArray(int[] array) {
