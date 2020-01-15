@@ -25,7 +25,7 @@ public class PositiveDiagonalNumbers {
     public static void main(String[] args) {
         int[][] array = {{-1, 2, 2, 2, 3}, {5, -1, 1, 1, 6}, {7, 7, 7, 2, 5}, {5, 1, 6, 2, 1}, {5, 1, 3, 5, -6}};
         printMatrix(array);
-         diagonalIntegers(array);
+        diagonalIntegers(array);
 
 
 
