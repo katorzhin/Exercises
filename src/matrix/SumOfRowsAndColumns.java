@@ -47,10 +47,8 @@ public class SumOfRowsAndColumns {
         int sum = 0;
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {
-                if (i == j) {
-                    sum += array[i][j];
+                    sum += array[i][i];
                     System.out.print(array[i][j] + " ");
-                }
             }
         }
         return "\nSum of the diagonal " + sum;
