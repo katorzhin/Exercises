@@ -42,7 +42,6 @@ public class SumOfRowsAndColumns {
         }
         System.out.println("\n" + SumFirstColumn + " " + SumSecondColumn + " " + SumThirdColumn);
     }
-
     public static String sumOfDiagonalLeft(int[][] array) {
         int sum = 0;
         for (int i = 0; i < array.length; i++) {
