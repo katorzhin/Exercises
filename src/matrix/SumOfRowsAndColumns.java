@@ -36,7 +36,6 @@ public class SumOfRowsAndColumns {
                 SumFirstColumn += array[i][0];
                 SumSecondColumn += array[i][1];
                 SumThirdColumn += array[i][2];
-
             }
             System.out.print("- ");
         }
