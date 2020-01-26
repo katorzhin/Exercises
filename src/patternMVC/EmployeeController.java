@@ -24,6 +24,7 @@ public class EmployeeController {
     public String getEmployeeId() {
         return model.getId();
     }
+
     public void updateView(){
         view.printEmployeeDetails(model.getName(),model.getId());
     }
