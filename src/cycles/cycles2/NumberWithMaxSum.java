@@ -9,7 +9,6 @@ public class NumberWithMaxSum {
         }
         return sum;
     }
-
     public static void main(String[] args) {
         int firstNumber = 789;
         int secondNumber = 1234;
