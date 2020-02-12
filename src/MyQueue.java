@@ -18,7 +18,6 @@ class Queue {
         if (rear == maxSize - 1) {
             rear = -1;
         }
-
         queue[++rear] = elem;
         nElem++;
     }
@@ -31,7 +30,6 @@ class Queue {
         }
         nElem--;
         return temp;
-
     }
 
     public int getFront() {
