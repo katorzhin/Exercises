@@ -50,7 +50,6 @@ public class UserDto {
         UserDto build();
     }
 
-
     public static void main(String[] args) {
         UserDto build = UserDto.builder()
                 .setFirstName("name")
@@ -59,7 +58,6 @@ public class UserDto {
                 .build();
 
         System.out.println(build.getAge() + build.getFirstName() + build.getLastName());
-
 
     }
 }
