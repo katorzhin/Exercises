@@ -56,7 +56,6 @@ public class ColumnWithMaxSumOfElements {
         } else {
             System.out.println("Third column,sum " + sumThirdColumn);
         }
-
     }
 
     public static void printMatrix(int[][] array) {
