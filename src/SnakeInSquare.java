@@ -35,11 +35,17 @@ public class SnakeInSquare {
     public static void main(String[] args) {
         int[][] array = new int[5][5];
         int start = 0;
+        int tmp=2;
         lineToRight(array, start, start, array.length, start + 1);
         lineToDown(array, start + 1, array.length - 1, array.length - 1, array.length + 1);
         lineToLeft(array, array.length - 1, array.length - 2, array.length - 1, array.length * 2);
         lineToUp(array, array.length - 2, start, array.length - 2, array.length * 3 - 1);
 
+
+        lineToRight(array,start+1,start+1,array.length-2,array.length*4-3);
+        lineToDown(array,tmp,array.length-2,array.length-3,array.length*5-5);
+
         printMatrix(array);
+
     }
 }
