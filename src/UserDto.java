@@ -58,6 +58,5 @@ public class UserDto {
                 .build();
 
         System.out.println(build.getAge() + build.getFirstName() + build.getLastName());
-
     }
 }
