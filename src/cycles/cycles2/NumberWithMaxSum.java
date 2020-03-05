@@ -1,7 +1,5 @@
 package cycles.cycles2;
 
-import java.util.Arrays;
-
 public class NumberWithMaxSum {
     public static int sumOfNumber(int number) {
         int sum = 0;
@@ -11,7 +9,6 @@ public class NumberWithMaxSum {
         }
         return sum;
     }
-
     public static void main(String[] args) {
         int firstNumber = 789;
         int secondNumber = 1234;

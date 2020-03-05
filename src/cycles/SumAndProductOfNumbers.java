@@ -68,7 +68,6 @@ public class SumAndProductOfNumbers {
     }
 
     public static void numbersInRange(int a, int b, int c) {
-
         while (a <= b) {
             System.out.print(a + " ");
             a = a + c;
