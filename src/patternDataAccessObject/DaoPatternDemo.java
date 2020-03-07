@@ -11,7 +11,6 @@ public class DaoPatternDemo {
         student.setName("Michael");
         studentDao.updateStudent(student);
 
-
         studentDao.getStudent(0);
         System.out.println("Student: [RollNo : " + student.getId() + ", Name : " + student.getName() + " ]");
     }
