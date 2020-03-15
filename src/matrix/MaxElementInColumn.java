@@ -35,6 +35,5 @@ public class MaxElementInColumn {
         int[][] array = {{1, 12, 3}, {4, 15, 6}, {17, 8, 9}, {10, 11, 12}, {3, 4, 5}};
         printMatrix(array);
         maxColumnElement(array);
-
     }
 }
