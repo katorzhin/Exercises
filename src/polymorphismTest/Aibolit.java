@@ -6,7 +6,7 @@ public class Aibolit {
         animal.run();
     }
 }
-class Test{
+class Main {
     public static void main(String[] args) {
         Aibolit aibolit = new Aibolit();
         Animal cat = new Cat();
