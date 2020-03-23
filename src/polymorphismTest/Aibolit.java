@@ -1,11 +1,12 @@
 package polymorphismTest;
 
 public class Aibolit {
-    public void healAnimal(Animal animal){
+    public void healAnimal(Animal animal) {
         System.out.println("Animal is healthy");
         animal.run();
     }
 }
+
 class Main {
     public static void main(String[] args) {
         Aibolit aibolit = new Aibolit();
