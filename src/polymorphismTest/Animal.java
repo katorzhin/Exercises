@@ -4,6 +4,9 @@ public class Animal {
     public void run(){
         System.out.println("run");
     }
+    public void sayHello(){
+        System.out.println("hello");
+    }
 }
 class Lion extends Animal {
     @Override
