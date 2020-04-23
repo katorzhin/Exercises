@@ -25,7 +25,6 @@ public class App {
         }
     }
 
-    //public static void nextTurn(Scanner scanner,)
     public static void searchWinner(char[][] array) {
         for (int i = 0; i < 3; i++) {
             if (array[i][0] == array[i][1] && array[i][1] == array[i][2]) {
@@ -42,27 +41,38 @@ public class App {
         currentPlayer = playerX;
 
         while (!win) {
-            System.out.println("Next TURN " + currentPlayer);
-            System.out.println("введи первый индекс");
-            int firstIndex = scanner.nextInt();
-            System.out.println("введи 2 индекс");
-            int secondIndex = scanner.nextInt();
-            myArray[firstIndex][secondIndex] = currentPlayer;
+            enterTurn(myArray, scanner);
             printSquare(myArray);
-            for (int i = 0; i < 3; i++) {
-
-                if (myArray[i][0] == myArray[i][1] && myArray[i][1] == myArray[i][2] && myArray[i][0] != '-') {
-                    System.out.println("Player " + currentPlayer + " win");
-                    win = true;
-                }
-            }
-            if (currentPlayer == 'X') {
-                currentPlayer = 'Y';
-            } else {
-                currentPlayer = 'X';
-            }
+            checkRow(myArray);
+            changePlayer();
         }
 
+    }
+
+    public static void changePlayer() {
+        if (currentPlayer == 'X') {
+            currentPlayer = 'Y';
+        } else {
+            currentPlayer = 'X';
+        }
+    }
+
+    public static void enterTurn(char[][] myArray, Scanner scanner) {
+        System.out.println("TURN " + currentPlayer);
+        System.out.println("введи первый индекс");
+        int firstIndex = scanner.nextInt();
+        System.out.println("введи 2 индекс");
+        int secondIndex = scanner.nextInt();
+        myArray[firstIndex][secondIndex] = currentPlayer;
+    }
+
+    public static void checkRow(char[][] myArray) {
+        for (int i = 0; i < 3; i++) {
+            if (myArray[i][0] == myArray[i][1] && myArray[i][1] == myArray[i][2] && myArray[i][0] != '-') {
+                System.out.println("Player " + currentPlayer + " win");
+                win = true;
+            }
+        }
     }
 }
 
