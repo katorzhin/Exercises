@@ -46,29 +46,90 @@ public class App {
         System.out.println("TURN " + currentPlayer);
         System.out.println("Please, enter the first index:");
         int firstIndex = scanner.nextInt();
+//        if (firstIndex>3){
+//            System.out.println("fuck!");
+//            return;
+//        }
         System.out.println("Enter the second index:");
         int secondIndex = scanner.nextInt();
+
         myArray[firstIndex][secondIndex] = currentPlayer;
+
+
     }
 
-    public static void checkRow(char[][] myArray) {
+    public static void checkRow(char[][] array) {
         for (int i = 0; i < 3; i++) {
-            if (myArray[i][0] == myArray[i][1] && myArray[i][1] == myArray[i][2] && myArray[i][0] != '-') {
+            if (array[i][0] == array[i][1] && array[i][1] == array[i][2] && array[i][0] != '-') {
                 System.out.println("Player " + currentPlayer + " win");
                 win = true;
             }
         }
     }
 
+    public static void checkDiagonally(char[][] array) {
+        if (array[1][1] != '-') {
+            if (array[0][0] == array[1][1] && array[1][1] == array[2][2] && array[0][0] != '-') {
+                System.out.println("Player " + currentPlayer + " win");
+                win = true;
+            }
+            if (array[0][2] == array[1][1] && array[1][1] == array[2][0] && array[0][2] != '-') {
+                System.out.println("Player " + currentPlayer + " win");
+                win = true;
+            }
+        }
+    }
+
+    public static boolean hasNSymbolsInARow(char[][] array, int quantity, char a) {
+        int count = 1;
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array[i].length - 1; j++) {
+                if (array[i][j] == array[i][j + 1] && array[i][j] != a) {
+                    count++;
+
+                    if (count == quantity) {
+                        return true;
+                    }
+                } else {
+                    count = 1;
+                }
+            }
+            count = 1;
+        }
+        return false;
+    }
+
+    public static boolean hasNSymbolsInAColumn(char[][] array, int quantity, char a) {
+        int count = 1;
+        for (int i = 0; i < array[0].length; i++) {
+            for (int j = 0; j < array.length - 1; j++) {
+                if (array[j][i] == array[j + 1][i] && array[j][i] != a) {
+                    count++;
+
+                    if (count == quantity) {
+                        return true;
+                    }
+                } else {
+                    count = 1;
+                }
+            }
+            count = 1;
+        }
+        return false;
+    }
+
+
     public static void main(String[] args) {
         char[][] myArray = new char[3][3];
         fillArray(myArray);
+        printSquare(myArray);
         Scanner scanner = new Scanner(System.in);
 
         while (!win) {
             enterTurn(myArray, scanner);
             printSquare(myArray);
             checkRow(myArray);
+            checkDiagonally(myArray);
             changePlayer();
         }
     }
