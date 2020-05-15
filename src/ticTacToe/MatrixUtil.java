@@ -3,7 +3,7 @@ package ticTacToe;
 import static ticTacToe.App.playerX;
 import static ticTacToe.App.currentPlayer;
 
-public class FillingSquare {
+public class MatrixUtil {
     public void printSquare(char[][] array) {
         for (int i = 0; i < array.length; i++) {
             for (int j = 0; j < array[i].length; j++) {

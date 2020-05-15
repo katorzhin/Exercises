@@ -7,15 +7,6 @@ public class App {
     public static char currentPlayer;
     public static boolean win;
 
-    public static void searchWinner(char[][] array) {
-        for (int i = 0; i < 3; i++) {
-            if (array[i][0] == array[i][1] && array[i][1] == array[i][2] && array[i][0] != '-') {
-                System.out.println("Player win");
-                win = true;
-            }
-        }
-    }
-
     public static void enterTurn(char[][] myArray, Scanner scanner) {
         System.out.println("TURN " + currentPlayer);
         while (true) {
@@ -50,9 +41,8 @@ public class App {
 
     public static void main(String[] args) {
         PlayerControl playerControl = new PlayerControl();
-        FillingSquare square = new FillingSquare();
-        ControlRows controlRows = new ControlRows();
-        ControlColumns controlColumns = new ControlColumns();
+        MatrixUtil square = new MatrixUtil();
+        CheckWin controlRows = new CheckWin();
 
         char[][] myArray = new char[3][3];
         square.fillArray(myArray);
