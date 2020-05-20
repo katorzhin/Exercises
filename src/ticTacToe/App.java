@@ -2,6 +2,9 @@ package ticTacToe;
 
 import java.util.Scanner;
 
+import static ticTacToe.CheckWin.checkDiagonal;
+import static ticTacToe.CheckWin.checkDiagonalForCenter;
+
 public class App {
     public static char playerX = 'X';
     public static char currentPlayer;
@@ -25,37 +28,25 @@ public class App {
         }
     }
 
-    public static void checkDiagonally(char[][] array) {
-        if (array[1][1] != '-') {
-            if (array[0][0] == array[1][1] && array[1][1] == array[2][2] && array[0][0] != '-') {
-                System.out.println("Player " + currentPlayer + " win");
-                win = true;
-            }
-            if (array[0][2] == array[1][1] && array[1][1] == array[2][0] && array[0][2] != '-') {
-                System.out.println("Player " + currentPlayer + " win");
-                win = true;
-            }
-        }
-    }
-
-
     public static void main(String[] args) {
         PlayerControl playerControl = new PlayerControl();
         MatrixUtil square = new MatrixUtil();
         CheckWin controlRows = new CheckWin();
 
-        char[][] myArray = new char[3][3];
+        char[][] myArray = new char[10][10];
         square.fillArray(myArray);
         square.printSquare(myArray);
 
         Scanner scanner = new Scanner(System.in);
-
+        System.out.println(myArray.length);
         while (!win) {
             enterTurn(myArray, scanner);
             square.printSquare(myArray);
             controlRows.checkRow(myArray);
-            checkDiagonally(myArray);
+            checkDiagonalForCenter(myArray);
+            checkDiagonal(myArray);
             playerControl.changePlayer();
+
         }
     }
 }

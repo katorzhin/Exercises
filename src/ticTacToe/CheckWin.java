@@ -50,4 +50,37 @@ public class CheckWin {
         }
         return false;
     }
+
+    public static boolean checkDiagonalForCenter(char[][] array) {
+        int count = 1;
+        for (int i = 0; i < array.length - 1; i++) {
+            if (array[i][i] == array[i + 1][i + 1]) {
+                count++;
+            } else {
+                count = 1;
+            }
+            if (count == 5) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean checkDiagonal(char[][] array) {
+        for (int i = 0; i < array.length * 2 - 1; i++) {
+            if (i < array.length - 1) {
+                System.out.println(i);
+            } else {
+                System.out.println(array.length - 2 - i);
+            }
+
+        }
+        for (int i = 0; i < array.length * 2 - 1; i++) {
+            for (int j = 0; j < i; j++) {
+
+            }
+        }
+        return false;
+    }
+
 }
