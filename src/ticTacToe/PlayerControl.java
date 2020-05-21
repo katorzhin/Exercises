@@ -1,14 +1,14 @@
 package ticTacToe;
 
-import static ticTacToe.App.currentPlayer;
+import static ticTacToe.App.*;
 
 public class PlayerControl {
 
     public  void changePlayer() {
         if (currentPlayer == 'X') {
-            currentPlayer = 'Y';
+            currentPlayer = playerZero;
         } else {
-            currentPlayer = 'X';
+            currentPlayer = playerX;
         }
     }
 }

@@ -1,15 +1,23 @@
 package ticTacToe;
 
-import static ticTacToe.App.currentPlayer;
-import static ticTacToe.App.win;
+import java.util.Scanner;
+
+import static ticTacToe.App.*;
 
 public class CheckWin {
-    public void checkRow(char[][] array) {
-        for (int i = 0; i < 3; i++) {
-            if (array[i][0] == array[i][1] && array[i][1] == array[i][2] && array[i][0] != '-') {
-                System.out.println("Player " + currentPlayer + " win");
+    public static void winnerCheck(PlayerControl playerControl, MatrixUtil square,
+                                   CheckWin checkWin, char[][] myArray, Scanner scanner) {
+        while (!win) {
+            enterTurn(myArray, scanner);
+            square.printSquare(myArray);
+            boolean checkRows = checkWin.hasNSymbolsInARow(myArray, 5, '-');
+            boolean checkColumns = checkWin.hasNSymbolsInAColumn(myArray, 5, '-');
+            boolean checkDiagonals = checkWin.checkDiagonal(myArray, 5, '-');
+            if (checkRows || checkColumns || checkDiagonals) {
                 win = true;
+                System.out.println("Player " + currentPlayer + " win!");
             }
+            playerControl.changePlayer();
         }
     }
 
@@ -32,7 +40,7 @@ public class CheckWin {
         return false;
     }
 
-    public static boolean hasNSymbolsInAColumn(char[][] array, int quantity, char a) {
+    public boolean hasNSymbolsInAColumn(char[][] array, int quantity, char a) {
         int count = 1;
         for (int i = 0; i < array[0].length; i++) {
             for (int j = 0; j < array.length - 1; j++) {
@@ -51,36 +59,14 @@ public class CheckWin {
         return false;
     }
 
-    public static boolean checkDiagonalForCenter(char[][] array) {
-        int count = 1;
-        for (int i = 0; i < array.length - 1; i++) {
-            if (array[i][i] == array[i + 1][i + 1]) {
-                count++;
-            } else {
-                count = 1;
-            }
-            if (count == 5) {
-                return true;
+    public boolean checkDiagonal(char[][] array, int quantity, char a) {
+        for (int i = 0; i < array.length; i++) {
+            for (int j = 0; j < array.length - 1 - i; j++) {
+                if (array[j][j] == array[j + 1][j + 1]) {
+
+                }
             }
         }
         return false;
     }
-
-    public static boolean checkDiagonal(char[][] array) {
-        for (int i = 0; i < array.length * 2 - 1; i++) {
-            if (i < array.length - 1) {
-                System.out.println(i);
-            } else {
-                System.out.println(array.length - 2 - i);
-            }
-
-        }
-        for (int i = 0; i < array.length * 2 - 1; i++) {
-            for (int j = 0; j < i; j++) {
-
-            }
-        }
-        return false;
-    }
-
 }

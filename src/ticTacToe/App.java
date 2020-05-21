@@ -2,11 +2,12 @@ package ticTacToe;
 
 import java.util.Scanner;
 
-import static ticTacToe.CheckWin.checkDiagonal;
-import static ticTacToe.CheckWin.checkDiagonalForCenter;
+import static ticTacToe.CheckWin.winnerCheck;
 
 public class App {
     public static char playerX = 'X';
+    public static char playerZero = '0';
+
     public static char currentPlayer;
     public static boolean win;
 
@@ -31,7 +32,7 @@ public class App {
     public static void main(String[] args) {
         PlayerControl playerControl = new PlayerControl();
         MatrixUtil square = new MatrixUtil();
-        CheckWin controlRows = new CheckWin();
+        CheckWin checkWin = new CheckWin();
 
         char[][] myArray = new char[10][10];
         square.fillArray(myArray);
@@ -39,14 +40,7 @@ public class App {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println(myArray.length);
-        while (!win) {
-            enterTurn(myArray, scanner);
-            square.printSquare(myArray);
-            controlRows.checkRow(myArray);
-            checkDiagonalForCenter(myArray);
-            checkDiagonal(myArray);
-            playerControl.changePlayer();
 
-        }
+        winnerCheck(playerControl, square, checkWin, myArray, scanner);
     }
 }
