@@ -3,6 +3,7 @@ package ticTacToe;
 import java.util.Scanner;
 
 import static ticTacToe.App.*;
+import static ticTacToe.Input.enterTurn;
 
 public class CheckWin {
     public static void winnerCheck(PlayerControl playerControl, MatrixUtil square,
