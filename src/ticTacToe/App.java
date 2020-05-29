@@ -2,16 +2,15 @@ package ticTacToe;
 
 import java.util.Scanner;
 
-import static ticTacToe.CheckWin.winnerCheck;
 
 public class App {
-    public static char playerX = 'X';
-    public static char playerZero = '0';
+    public static final char PLAYER_X = 'X';
+    public static final char PLAYER_ZERO = '0';
     public static char currentPlayer;
     public static boolean win;
 
     public static void main(String[] args) {
-        PlayerControl playerControl = new PlayerControl();
+        GameController gameController = new GameController();
         MatrixUtil square = new MatrixUtil();
         CheckWin checkWin = new CheckWin();
 
@@ -21,6 +20,6 @@ public class App {
 
         Scanner scanner = new Scanner(System.in);
 
-        winnerCheck(playerControl, square, checkWin, myArray, scanner);
+        gameController.startGame(square,myArray,scanner);
     }
 }

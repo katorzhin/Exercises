@@ -15,8 +15,8 @@ public class Input {
             boolean badFirstInput = firstIndex >= myArray.length || firstIndex < 0;
             boolean badSecondInput = secondIndex >= myArray.length || secondIndex < 0;
             if (badFirstInput || badSecondInput
-                    || (myArray[firstIndex][secondIndex] == playerX
-                    || myArray[firstIndex][secondIndex] == playerZero)) {
+                    || (myArray[firstIndex][secondIndex] == PLAYER_X
+                    || myArray[firstIndex][secondIndex] == PLAYER_ZERO)) {
                 System.out.println("Please correct index!");
             } else {
                 myArray[firstIndex][secondIndex] = currentPlayer;
