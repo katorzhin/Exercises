@@ -1,5 +1,7 @@
 package tasksCodeWars;
 
+import java.util.Arrays;
+
 public class Solution {
     public static int countCentury(int year) {
         year += 99;
@@ -8,10 +10,9 @@ public class Solution {
     }
 
     public static int[] monkeyCount(final int n) {
-        int count = 1;
         int[] array = new int[n];
         for (int i = 0; i < n; i++) {
-            array[i] = count++;
+            array[i] = i + 1;
         }
         return array;
     }
@@ -49,23 +50,18 @@ public class Solution {
     }
 
     public static String well(String[] x) {
-        // TODO
-        int good = 0;
-        for (int i = 0; i < x.length - 1; i++) {
-            if (x[i].equals("good")) {
-                good++;
-            }
-            if (good > 0 && good <= 2) {
-                return "Publish";
-            }
-            if (good == 0) {
-                return "Fail";
-            }
-            if (good > 2) {
-                return "I smell a series!";
+        String res = "Fail!";
+        int count = 0;
+        for (int i = 0; i < x.length; i++) {
+            if (x[i].equalsIgnoreCase("good")) {
+                res = "Publish!";
+                count++;
+                if (count > 2) {
+                    return "I smell a series!";
+                }
             }
         }
-        return null;
+        return res;
     }
 
     public static int[] countPositivesSumNegatives(int[] input) {
@@ -120,6 +116,31 @@ public class Solution {
             }
         }
         return tmp;
+    }
+
+    public static String remove(String str) {
+        String temp = str.substring(1, str.length() - 1);
+        return temp;
+    }
+
+    public static int sumOfDifferences(int[] arr) {
+        int sum = 0;
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr.length - 1; j++) {
+                if (arr[j] < arr[j + 1]) {
+                    int tmp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = tmp;
+                }
+            }
+        }
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 1; j < arr.length; j++) {
+                sum += arr[i] - arr[j];
+                i++;
+            }
+        }
+        return sum;
     }
 }
 
