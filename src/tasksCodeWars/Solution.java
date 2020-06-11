@@ -142,5 +142,84 @@ public class Solution {
         }
         return sum;
     }
+
+    public static String reverseString(String str) {
+        String tmp = "";
+        for (int i = 0; i < str.length(); i++) {
+            tmp += str.charAt(str.length() - 1 - i);
+        }
+        return tmp;
+    }
+
+    public static int[] divisibleBy(int[] numbers, int divider) {
+        int count = 0;
+        for (int i = 0; (i < numbers.length); i++) {
+            if (numbers[i] % divider == 0) {
+                count++;
+            }
+        }
+        int[] newArray = new int[count];
+        int index = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] % divider == 0) {
+                newArray[index] = numbers[i];
+                index++;
+            }
+        }
+        return newArray;
+    }
+
+    public static int expressionsMatter(int a, int b, int c) {
+        //For the stupid task - stupid solution:)
+
+        int result = a * (b + c);
+
+        if (result < (a * b * c)) {
+            result = a * b * c;
+        }
+        if (result < (a + b * c)) {
+            result = a + b * c;
+        }
+        if (result < (a + b) * c) {
+            result = (a + b) * c;
+        }
+        if (result < (a + b + c)) {
+            result = a + b + c;
+        }
+        if (result < a * b + c) {
+            result = a * b + c;
+        }
+        return result;
+    }
+    public static Integer calculateTip(double amount, String rating) {
+        rating=rating.toLowerCase();
+        int tip;
+        switch(rating) {
+            case "terrible":
+                return 0;
+            case "poor":
+                amount*=0.05;
+                amount=Math.ceil(amount);
+                tip=(int)amount;
+                return tip;
+            case "good":
+                amount*=0.1;
+                amount=Math.ceil(amount);
+                tip=(int)amount;
+                return tip;
+            case "great":
+                amount*=0.15;
+                amount=Math.ceil(amount);
+                tip=(int)amount;
+                return tip;
+            case "excellent":
+                amount*=0.2;
+                amount=Math.ceil(amount);
+                tip=(int)amount;
+                return tip;
+            default:
+                return null;
+        }
+    }
 }
 
