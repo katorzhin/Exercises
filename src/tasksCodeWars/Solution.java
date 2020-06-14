@@ -191,35 +191,41 @@ public class Solution {
         }
         return result;
     }
+
     public static Integer calculateTip(double amount, String rating) {
-        rating=rating.toLowerCase();
+        rating = rating.toLowerCase();
         int tip;
-        switch(rating) {
+        switch (rating) {
             case "terrible":
                 return 0;
             case "poor":
-                amount*=0.05;
-                amount=Math.ceil(amount);
-                tip=(int)amount;
+                amount *= 0.05;
+                amount = Math.ceil(amount);
+                tip = (int) amount;
                 return tip;
             case "good":
-                amount*=0.1;
-                amount=Math.ceil(amount);
-                tip=(int)amount;
+                amount *= 0.1;
+                amount = Math.ceil(amount);
+                tip = (int) amount;
                 return tip;
             case "great":
-                amount*=0.15;
-                amount=Math.ceil(amount);
-                tip=(int)amount;
+                amount *= 0.15;
+                amount = Math.ceil(amount);
+                tip = (int) amount;
                 return tip;
             case "excellent":
-                amount*=0.2;
-                amount=Math.ceil(amount);
-                tip=(int)amount;
+                amount *= 0.2;
+                amount = Math.ceil(amount);
+                tip = (int) amount;
                 return tip;
             default:
                 return null;
         }
+    }
+
+    public static String[] stringToArray(String str) {
+        String[] array = str.split(" ");
+        return array;
     }
 }
 
