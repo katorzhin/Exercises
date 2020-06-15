@@ -1,6 +1,9 @@
 package tasksCodeWars;
 
+import java.util.ArrayList;
+
 import java.util.Arrays;
+import java.util.List;
 
 public class Solution {
     public static int countCentury(int year) {
@@ -221,6 +224,31 @@ public class Solution {
             default:
                 return null;
         }
+    }
+
+    public static String twoSort (String[] strings) {
+        int firstWordIndex = 0;
+        for (int i = 0; i < strings.length; i++) {
+            for (int j = i + 1; j < strings.length; j++) {
+                if (strings[i].charAt(0) > strings[j].charAt(0)) {
+                    String temp = strings[i];
+                    strings[i] = strings[j];
+                    strings[j] = temp;
+                }
+            }
+        }
+
+        String firstWord = strings[firstWordIndex];
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < firstWord.length(); i++) {
+            sb.append(firstWord.charAt(i));
+            if (i == firstWord.length() - 1) {
+                continue;
+            }
+            sb.append("***");
+        }
+
+        return sb.toString();
     }
 
     public static String[] stringToArray(String str) {
