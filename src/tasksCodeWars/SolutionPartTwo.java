@@ -1,5 +1,7 @@
 package tasksCodeWars;
 
+import java.util.Arrays;
+
 public class SolutionPartTwo {
     public static int Past(int h, int m, int s) {
         int second = 1000;
@@ -10,6 +12,7 @@ public class SolutionPartTwo {
     }
 
     public static int points(String[] games) {
+        StringBuilder stringBuilder = new StringBuilder();
         int res = 0;
         for (String game : games) {
             String[] split = game.split(":");
@@ -22,5 +25,24 @@ public class SolutionPartTwo {
             }
         }
         return res;
+    }
+    public static String[] capitalize(String s){
+        String strToUpperCase = s.toUpperCase();
+        String tmp = "";
+        String tmp2= "";
+        for (int i = 0; i < s.length(); i++) {
+            if (i%2==0){
+                tmp+=strToUpperCase.charAt(i);
+                tmp2+=s.charAt(i);
+            }else {
+                tmp+=s.charAt(i);
+                tmp2+=strToUpperCase.charAt(i);
+            }
+        }
+        return new String[]{tmp,tmp2};
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Arrays.toString(capitalize("hello world")));
     }
 }
