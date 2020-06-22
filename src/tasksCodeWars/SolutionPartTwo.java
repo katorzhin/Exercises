@@ -1,7 +1,5 @@
 package tasksCodeWars;
 
-import java.util.Arrays;
-
 public class SolutionPartTwo {
     public static int Past(int h, int m, int s) {
         int second = 1000;
@@ -26,23 +24,41 @@ public class SolutionPartTwo {
         }
         return res;
     }
-    public static String[] capitalize(String s){
+
+    public static String[] capitalize(String s) {
         String strToUpperCase = s.toUpperCase();
         String tmp = "";
-        String tmp2= "";
+        String tmp2 = "";
         for (int i = 0; i < s.length(); i++) {
-            if (i%2==0){
-                tmp+=strToUpperCase.charAt(i);
-                tmp2+=s.charAt(i);
-            }else {
-                tmp+=s.charAt(i);
-                tmp2+=strToUpperCase.charAt(i);
+            if (i % 2 == 0) {
+                tmp += strToUpperCase.charAt(i);
+                tmp2 += s.charAt(i);
+            } else {
+                tmp += s.charAt(i);
+                tmp2 += strToUpperCase.charAt(i);
             }
         }
-        return new String[]{tmp,tmp2};
+        return new String[]{tmp, tmp2};
     }
 
-    public static void main(String[] args) {
-        System.out.println(Arrays.toString(capitalize("hello world")));
+    public static int arrayPlusArray(int[] arr1, int[] arr2) {
+        int count = 0;
+        for (int i = 0; i < arr1.length; i++) {
+            count += arr1[i];
+            count += arr2[i];
+        }
+        return count;
+    }
+
+    public static boolean check(Object[] a, Object x) {
+        for (int i = 0; i < a.length; i++) {
+            System.out.println(a[i].equals(x));
+            if (a[i] == x ) {
+                return true;
+            }
+        }
+//        return Arrays.asList(a).contains(x);
+        return false;
     }
 }
+
