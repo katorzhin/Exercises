@@ -1,7 +1,5 @@
 package tasksCodeWars;
 
-import java.util.Arrays;
-
 public class Solution {
     public static int countCentury(int year) {
         year += 99;
@@ -248,9 +246,14 @@ public class Solution {
         return sb.toString();
     }
 
-    public static String[] stringToArray(String str) {
-        String[] array = str.split(" ");
-        return array;
+    public static String cut(String string) {
+        String temp = "";
+        for (int i = 1; i < string.length() - 1; i++) {
+            temp += string.charAt(i);
+        }
+        string = temp;
+        return string;
     }
+
 }
 
