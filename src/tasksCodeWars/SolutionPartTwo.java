@@ -1,5 +1,7 @@
 package tasksCodeWars;
 
+import java.util.Arrays;
+
 public class SolutionPartTwo {
     public static int Past(int h, int m, int s) {
         int second = 1000;
@@ -60,5 +62,17 @@ public class SolutionPartTwo {
 //        return Arrays.asList(a).contains(x);
         return false;
     }
+    public static int sum(int[] arr){
+        int countSumPositive =0;
+        for (int i = 0; i < arr.length; i++) {
+            if (!(arr[i]<0)) {
+            countSumPositive+=arr[i];
+            }else {
+                continue;
+            }
+        }
+        return countSumPositive;
+    }
+
 }
 
