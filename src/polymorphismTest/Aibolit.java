@@ -1,6 +1,5 @@
 package polymorphismTest;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -23,6 +22,5 @@ class Main {
         aibolit.healAnimal(lion);
         List<Animal> animals = Arrays.asList(new Cat(),new Dog(),new Lion());
         animals.forEach(animal -> animal.run());
-
     }
 }
